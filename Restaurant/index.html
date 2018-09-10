@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurant</title>
+    <script src="RestaurantArrays.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <style>
+        html {
+            position: relative;
+            min-height: 100%;
+        }
+        body {
+            /* Margin bottom by footer height */
+            margin-bottom: 60px;
+        }
+        .footer {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            /* Set the fixed height of the footer here */
+            height: 60px;
+            line-height: 60px; /* Vertically center the text there */
+            background-color: #ffffff;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showClicks() {
+            document.getElementById("main-dishes").style.display = "none";
+            document.getElementById("order-button").style.display = "none";
+            let subtotal = 0;
+            let outputString = "<div id='order' class='mt-5'><h5>Your order</h5><table class='table'>";
+            for (i=0; i< ItemName.length; i++) {
+                let box = document.getElementById(ItemName[i]);
+                if (box.checked) {
+                    subtotal = subtotal + ItemPrice[i];
+                    outputString += "<tr><td>" + ItemName[i] + "</td><td>" + ItemPrice[i] + "</td></tr>";
+                }
+            }
+            outputString += "<tr><td><strong>Subtotal</strong></td><td>" + subtotal.toFixed(2) + "</td></tr>";
+            outputString += "<tr><td>Tip (15%)</td><td>" + (subtotal*.15).toFixed(2) + "</td></tr>";
+            outputString += "<tr><td>Tax (7%)</td><td>" + (subtotal*.07).toFixed(2) + "</td></tr>";
+            let grandTotal = (subtotal*1.1 + subtotal*0.089).toFixed(2);
+            outputString += "<tr><td><strong>Total</strong></td><td>" + grandTotal + "</td></tr></table></div>";
+            document.getElementById("output").innerHTML = outputString;
+            let outputImages = "<div style='position: relative; top: 0; left: 0;' class='mt-5'><img src='Plate.jpg' style='position: relative; top: 0; left: 0' alt='Dinner plate'>";
+            let boxesChecked = 0;
+            let foods = [];
+            for (i=0; i< ItemName.length; i++) {
+                let box = document.getElementById(ItemName[i]);
+                if (box.checked) {
+                    boxesChecked++;
+                    foods.push(ItemPic[i]);
+                }
+            }
+            // This starts putting the images on the plate, supports ordering up to 5 items.
+            if (boxesChecked == 1) {
+                outputImages += "<img src='restaurantImages/" + foods[0] + "' style='position: absolute; top: 250px; left: 250px;'>";
+            } else if (boxesChecked == 2) {
+                outputImages += "<img src='restaurantImages/" + foods[0] + "' style='position: absolute; top: 250px; left: 150px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[1] + "' style='position: absolute; top: 250px; left: 320px;'>";
+            } else if (boxesChecked == 3) {
+                outputImages += "<img src='restaurantImages/" + foods[0] + "' style='position: absolute; top: 300px; left: 150px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[1] + "' style='position: absolute; top: 300px; left: 320px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[2] + "' style='position: absolute; top: 150px; left: 250px;'>";
+            } else if (boxesChecked == 4) {
+                outputImages += "<img src='restaurantImages/" + foods[0] + "' style='position: absolute; top: 320px; left: 150px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[1] + "' style='position: absolute; top: 320px; left: 320px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[2] + "' style='position: absolute; top: 150px; left: 150px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[3] + "' style='position: absolute; top: 150px; left: 320px;'>";
+            } else if (boxesChecked == 5) {
+                outputImages += "<img src='restaurantImages/" + foods[0] + "' style='position: absolute; top: 320px; left: 150px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[1] + "' style='position: absolute; top: 320px; left: 320px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[2] + "' style='position: absolute; top: 150px; left: 150px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[3] + "' style='position: absolute; top: 150px; left: 320px;'>";
+                outputImages += "<img src='restaurantImages/" + foods[4] + "' style='position: absolute; top: 235px; left: 235px;'>";
+            }
+            outputImages += "</div>";
+            document.getElementById("table-with-food").innerHTML = outputImages;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container mt-5" id="static-heading">
+    <h3>Julio's Restaurant</h3>
+    <p>Come and enjoy wonderful food from around the world that may or may not by the restaurant owner's favorites.</p>
+</div>
+
+<div class="container mt-5" id="main-dishes">
+    <table class="table">
+        <tbody>
+        <script>
+            document.write("<h4>Main Dishes</h4>");
+            let i;
+            for (i=0; i< ItemName.length; i++) {
+                document.write("<tr>\n\t<td><input type='checkbox' id='" + ItemName[i] + "' value='"+ i +"'></td>" + "<td><strong>" + ItemName[i] + "</strong><br>" + ItemDescription[i] + "</td>\n" +
+                    "<td>" + ItemPrice[i] + "</td>" + "</tr>");
+            }
+        </script>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <button id="order-button" class="btn btn-outline-dark mt-3 mb-5" type="submit" value="Place Order" onclick="showClicks()">Place Order</button>
+</div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6" id="output"></div>
+        <div class="col-md-6" id="table-with-food"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <span><small>The contents of this website are © Julio Corzo under the terms of the <a style="text-decoration: underline; color: black;" href="https://github.com/juliocorzo/bootstrapped/blob/master/LICENSE.txt" target="_blank">MIT License.</a></small></span>
+    </div>
+</footer>
+</body>
+
+</html>

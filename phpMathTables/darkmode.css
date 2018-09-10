@@ -1,0 +1,19 @@
+body {
+  background-color: black !important;
+}
+
+body, iframe {
+  filter: invert(0.9) hue-rotate(180deg) !important;
+}
+
+embed, img, video, figure:empty {
+  filter: invert(0.9) hue-rotate(180deg) !important;
+}
+
+[style*='background:url']:not(html):not(body):not(input), [style*='background: url']:not(html):not(body):not(input), [style*='background-image']:not(html):not(body):not(input) {
+  filter: invert(0.9) hue-rotate(180deg) !important;
+}
+
+:-webkit-full-screen, :-webkit-full-screen * {
+  filter: none !important;
+}

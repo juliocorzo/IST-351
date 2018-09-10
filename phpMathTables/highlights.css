@@ -1,0 +1,294 @@
+/*
+ *      Vera v4 (https://github.com/juliocorzo)
+ *      Copyright 2018, Julio Corzo
+ *
+ *      Adapted for light themes, for use with Rouge code formatting and as
+ *      a standalone stylesheet. 
+ *
+ * ----------------------------------------------------------------------------- */
+
+pre {
+  padding: 1rem 1rem 1rem 2rem;
+  overflow: auto;
+  line-height: 1.45;
+  background-color: #ffffff;
+  border-radius: 0.2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem
+}
+
+code {
+  padding: 3px 5px;
+  font-family: 'Source Code Pro', monospace;
+  background-color: #ffffff;
+  border-radius: 0.2rem
+}
+
+pre code {
+  padding: 0;
+  background-color: #ffffff
+}
+
+code {
+  color: #000
+}
+
+.highlight .hll {
+  background-color: #EFEFEF
+}
+
+.highlight .c {
+  color: #515151
+}
+
+.highlight .err {
+  background: #E65F5C;
+  color: #fff
+}
+
+.highlight .k {
+  color: #9D5AC9
+}
+
+.highlight .l {
+  color: #F5871F
+}
+
+.highlight .n {
+  color: #000
+}
+
+.highlight .o {
+  color: #3d3d3d
+}
+
+.highlight .p {
+  color: #515151
+}
+
+.highlight .cm {
+  color: #515151
+}
+
+.highlight .cp {
+  color: #515151
+}
+
+.highlight .c1 {
+  color: #515151
+}
+
+.highlight .cs {
+  color: #515151
+}
+
+.highlight .gd {
+  color: #E65F5C
+}
+
+.highlight .ge {
+  font-style: italic
+}
+
+.highlight .gh {
+  color: #000;
+  font-weight: bold
+}
+
+.highlight .gi {
+  color: #60AD40
+}
+
+.highlight .gp {
+  color: #60AD40;
+  font-weight: bold
+}
+
+.highlight .gs {
+  font-weight: bold
+}
+
+.highlight .gu {
+  color: #3d969d;
+  font-weight: bold
+}
+
+.highlight .kc {
+  color: #9D5AC9
+}
+
+.highlight .kd {
+  color: #9D5AC9
+}
+
+.highlight .kn {
+  color: #3d969d
+}
+
+.highlight .kp {
+  color: #3988EF
+}
+
+.highlight .kr {
+  color: #9D5AC9
+}
+
+.highlight .kt {
+  color: #255BA3
+}
+
+.highlight .ld {
+  color: #60AD40
+}
+
+.highlight .m {
+  color: #F5871F
+}
+
+.highlight .s {
+  color: #60AD40
+}
+
+.highlight .na {
+  color: #3988EF
+}
+
+.highlight .nb {
+  color: #3988EF
+}
+
+.highlight .nc {
+  color: #255BA3
+}
+
+.highlight .no {
+  color: #255BA3
+}
+
+.highlight .nd {
+  color: #3d969d
+}
+
+.highlight .ni {
+  color: #000
+}
+
+.highlight .ne {
+  color: #E65F5C
+}
+
+.highlight .nf {
+  color: #3988EF
+}
+
+.highlight .nl {
+  color: #000
+}
+
+.highlight .nn {
+  color: #255BA3
+}
+
+.highlight .nx {
+  color: #3988EF
+}
+
+.highlight .py {
+  color: #000
+}
+
+.highlight .nt {
+  color: #3d969d
+}
+
+.highlight .nv {
+  color: #E65F5C
+}
+
+.highlight .ow {
+  color: #3d969d
+}
+
+.highlight .w {
+  color: #000
+}
+
+.highlight .mf {
+  color: #F5871F
+}
+
+.highlight .mh {
+  color: #F5871F
+}
+
+.highlight .mi {
+  color: #F5871F
+}
+
+.highlight .mo {
+  color: #F5871F
+}
+
+.highlight .sb {
+  color: #60AD40
+}
+
+.highlight .sc {
+  color: #000
+}
+
+.highlight .sd {
+  color: #515151
+}
+
+.highlight .s2 {
+  color: #60AD40
+}
+
+.highlight .se {
+  color: #F5871F
+}
+
+.highlight .sh {
+  color: #60AD40
+}
+
+.highlight .si {
+  color: #F5871F
+}
+
+.highlight .sx {
+  color: #60AD40
+}
+
+.highlight .sr {
+  color: #60AD40
+}
+
+.highlight .s1 {
+  color: #60AD40
+}
+
+.highlight .ss {
+  color: #60AD40
+}
+
+.highlight .bp {
+  color: #000
+}
+
+.highlight .vc {
+  color: #E65F5C
+}
+
+.highlight .vg {
+  color: #E65F5C
+}
+
+.highlight .vi {
+  color: #E65F5C
+}
+
+.highlight .il {
+  color: #F5871F
+}
